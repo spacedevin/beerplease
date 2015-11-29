@@ -1,0 +1,15 @@
+{
+	"name": "Beer Squirrel",
+	"description": "An Image and text sharing tool",
+	"website": "http://beersquirrel.xyz",
+	"repository": "https://github.com/arzynik/beersquirrel",
+	"keywords": ["tipsy", "image", "sharing", "text", "mysql", "postgresql"],
+	"addons": ["heroku-postgresql"],
+	"env": {
+		"ENV": "heroku"
+	},
+	"logo": "http://beersquirrel.xyz/icon.svg",
+	"scripts": {
+		"postdeploy": "php install/install.php"
+	}
+}

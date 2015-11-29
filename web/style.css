@@ -1,0 +1,245 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+html {
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+body {
+	background: #68ccf4 url(/bg.jpg) no-repeat;
+	background-position: center -550px;
+	overflow: hidden;
+	font-family: Helvetica, Lucida Grande, Arial, Verdana, sans-serif;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+#parallax {
+	position: relative;
+	overflow: hidden;
+	width: 1200px;
+	height: 800px;
+	margin: 0 auto;
+	display: none;
+}
+
+.ui-wrapper {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 1024px;
+	margin-left: -512px;
+}
+
+.beer-counter {
+	height: 90px;
+	width: 90px;
+	background: #282828;
+	border-radius: 30px;
+	-webkit-transform: rotate(8deg);
+	-moz-transform: rotate(8deg);
+	-o-transform: rotate(8deg);
+	z-index: 1000;
+	border: 5px solid #ecf5fc;
+	margin-top: 20px;
+	box-shadow: 0px 0px 25px rgba(0,0,0,.6);
+}
+
+.beer-input {
+	border: 0;
+	background: transparent;
+	text-align: center;
+	width: 80px;
+	height: 50px;
+	padding: 15px;
+	font-size: 50px;
+	margin: 9px 0 0 -10px;
+	color: #f0f1f4;
+}
+
+.beer {
+	height: 450px;
+	width: 267px;
+	background: url(/beer.png) no-repeat;
+	position: absolute;
+}
+
+.beers {
+	width: 100px;
+	height: 300px;
+	float: left;
+	margin-left: 175px;
+	margin-top: 210px;
+}
+
+.beer-slider-wrapper {
+	position: fixed;
+	z-index: 1000;
+	bottom: 0px;
+	left: 0;
+	width: 100%;
+	background: #282828;
+
+}
+.beer-slider {
+	font-size: 10px;
+	left: 10px;
+
+}
+
+.beer-slider.ui-slider-horizontal {
+	height: 42px;
+	border-radius: 0;
+}
+
+.beer-slider.ui-slider .ui-slider-handle {
+
+}
+
+.beer-slider-endcap {
+	height: 42px;
+	width: 30px;
+	background: #344a53;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+.beer-slider.ui-slider-horizontal .ui-slider-handle {
+	top: 0;
+	background: #282828;
+	margin-left: -.6em;
+	border: 4px solid #ecf5fc;
+	height: 34px;
+	width: 34px;
+	border-radius: 12px;
+}
+
+.beer-slider .ui-slider-range {
+	background: #282828;
+}
+
+.beer-slider .ui-slider-handle {
+	border-color: #ef2929;
+	border: none;
+}
+
+.beer-slider.ui-widget-content {
+	background: #344a53;
+	border: none;
+}
+
+.ui-corner-all {
+	border-radius: 0;
+}
+
+
+.beer-counter-wrapper {
+	position: absolute;
+	height: 100px;
+	width: 100px;
+}
+
+.buy-text-beer {
+	position: absolute;
+	margin-top: 60px;
+	margin-left: 130px;
+}
+
+.logo {
+	text-align: center;
+	position: absolute;
+	z-index: 1000;
+	width: 1024px;
+}
+
+.chunk {
+	font-family: Coustard;
+}
+
+.buy-text {
+	color: #282828;
+	font-size: 45px;
+	margin-left: 145px;
+	margin-top: 240px;
+	width: 300px;
+	float: left;
+	text-shadow:
+		-1px -1px 0 #ecf5fc,
+		1px -1px 0 #ecf5fc,
+		-1px 1px 0 #ecf5fc,
+		1px 1px 0 #ecf5fc,
+		-2px -2px 0 #ecf5fc,
+		2px -2px 0 #ecf5fc,
+		-2px 2px 0 #ecf5fc,
+		2px 2px 0 #ecf5fc,
+		0px 0px 25px rgba(0,0,0,200);
+}
+
+.buy-button {
+	font-size: 30px;
+	color: #f0f1f4;
+	background: #282828;
+	border-radius: 20px;
+	border: 5px solid #ecf5fc;
+	margin-top: 200px;
+	padding: 10px 0 8px 0;
+	width: 240px;
+	box-shadow: 0px 0px 25px rgba(0,0,0,.6);
+	cursor: pointer;
+}
+
+.divider {
+	clear: both;
+}
+
+.star {
+	font-size: 18px;
+	margin: 0 0 0 -2px;
+	position: absolute;
+	opacity: .8
+}
+
+.beer-text-star {
+	margin-top: 50px;
+	font-size: 12px;
+	text-shadow: none;
+}
+
+.nav {
+	color: #f0f1f4;
+	background: #282828;
+	position: fixed;
+	top: 0;
+	right: 0;
+	-webkit-transform: rotate(45deg);
+	height: 100px;
+	width: 200px;
+	margin-top: -40px;
+	margin-right: -70px;
+}
+
+.nav-content {
+	margin-top: 70px;
+	margin-left: 70px;
+	text-align: center;
+	width: 100px;
+}
+
+a {
+	color: #fff;
+}
+
+#configure input[type="text"] {
+	border: 2px solid #ccc;
+	border-radius: 2px;
+	padding: 5px;
+	width: 400px;
+}
+
+
+.right .github-fork-ribbon {
+    background-color: #f80;
+}

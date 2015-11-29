@@ -1,0 +1,6 @@
+{
+	"require": {
+		"arzynik/tipsy": "dev-master",
+		"stripe/stripe-php": "^3.4"
+	}
+}
