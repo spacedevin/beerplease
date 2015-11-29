@@ -61,7 +61,6 @@ angular.module('BeerPlease', [])
 	});
 
 	$rootScope.pay = function(e) {
-		// Open Checkout with further options
 		handler.open({
 			name: 'Devin Smith',
 			description: '2 widgets',
@@ -79,6 +78,12 @@ angular.module('BeerPlease', [])
 	$rootScope.beers = 1;
 
 	$rootScope.$watch('beers', function() {
+		if (parseInt($rootScope.beers) != $rootScope.beers || $rootScope.beers < 1 || $rootScope.beers.replace(/[^0-9]/,'') != $rootScope.beers) {
+			$rootScope.beers = 1;
+		}
+		if ($rootScope.beers > 99) {
+			$rootScope.beers = 99;
+		}
 		App.setBeers($rootScope.beers);
 	});
 });
