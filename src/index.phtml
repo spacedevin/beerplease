@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="BeerPlease">
 	<head>
 		<title>Beer Please</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+
+		<base href="/">
 
 		<link rel="shortcut icon" href="/icon.png">
 		<link rel="apple-touch-icon" href="/icon.png" />
@@ -15,38 +17,41 @@
 		<meta property="og:site_name" content="Beer Squirrel">
 
 		<link href="/style.css" rel="stylesheet" type="text/css">
-		<link href='https://fonts.googleapis.com/css?family=Coustard:400,900' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
+		<link href='https://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<div class="github-fork-ribbon-wrapper right">
-			<div class="github-fork-ribbon">
-				<a href="https://github.com/arzynik/beerplease">Fork me on GitHub</a>
+		<div class="container">
+			<h1>Beer Please!</h1>
+
+			<div class="tagline">
+				<h2>Send Devin</h2>
+				<div class="beer-counter"><input type="text" class="beer-input" value="1" ng-model="beers"></div>
+				<h2>beer{{beers > 1 ? 's' : ''}}*</h2>
 			</div>
-		</div>
 
-		<div class="chunk buy-text">
-			<div class="buy-text-buy">Send&nbsp;<span class="owner-first-name"></span></div>
-			<div class="beer-counter-wrapper">
-				<div class="beer-counter"><input type="text" class="beer-input chunk" value="1"></div>
+			<div class="slider">
+				<input type="range" id="range" value="1" max="99" min="1" ng-model="beers">
 			</div>
-			<div class="buy-text-beer"><span class="buy-text-beer-text">beer</span>.<span class="star">*</span></div>
 
-			<button class="buy-button chunk" id="customButton">send <span class="buy-button-it">it</span>!</button>
+			<div class="button">
+				<button ng-click="pay()">send {{beers > 1 ? '\'em' : 'it'}}!</button>
+			</div>
 
-			<div class="beer-text-star">* Not actually beer or any form of physical good or service. A $5 per quantity donation.</div>
+			<div class="beers">
+				<div class="beer beer-origional"></div>
+			</div>
+
+			<div class="footer">
+				* Not actually beer. Just a $5 per quantity payment.
+				Created with <a href="http://github.com/arzynik/beerplease" target="_blank">Beer Please</a>, an opensource payment project powered by <a href="http://tipsy.la" target="_blank">Tipsy</a>
+			</div>
+
 		</div>
 
-		<div class="beers">
-			<div class="beer beer-origional" style="z-index: 500; margin: -15px 0 0 15px;"></div>
-		</div>
 
-		<div class="beer-slider-wrapper">
-			<div class="beer-slider"></div>
-			<div class="beer-slider-endcap"></div>
-		</div>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
 		<script src="https://checkout.stripe.com/checkout.js"></script>
 		<script type="text/javascript" src="/fastclick.js"></script>
 		<script type="text/javascript" src="/script.js"></script>
