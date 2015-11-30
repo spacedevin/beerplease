@@ -55,7 +55,7 @@
 			var config = {
 				stripe: {
 					publish: '<?=$config['stripe']['publish']?>',
-					bitcoin: <?=$config['stripe']['bitcoin'] ? true : false?>,
+					bitcoin: <?=$config['stripe']['bitcoin'] ? 'true' : 'false'?>,
 					image: '<?=str_replace("'","\\'",$config['stripe']['image'])?>'
 				},
 				general: {
