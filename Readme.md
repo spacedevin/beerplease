@@ -7,7 +7,7 @@ Beer Please allows beer payments using [Stripe](https://stripe.com/).
 
 1. Create an account on [Stripe](https://stripe.com/)
 1. Login and go to **Account Settings**
-1. **Go to API Keys**
+1. Go to **API Keys**
 1. Add your Live keys to the heroku deployment page
 
 
