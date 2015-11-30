@@ -1,6 +1,6 @@
 {
-	"name": "Beer Please!",
-	"description": "Beer payments using stripe",
+	"name": "Ice Cream Please!",
+	"description": "Ice Cream payments using stripe",
 	"website": "http://beerplease.co",
 	"repository": "https://github.com/arzynik/beerplease",
 	"keywords": ["tipsy", "beer", "please", "stripe", "payments"],
@@ -9,7 +9,7 @@
 		"GENERAL_TITLE": {
 			"description": "The title at the top of your page",
 			"required": false,
-			"value": "Beer Please!"
+			"value": "Ice Cream Please!"
 		},
 		"GENERAL_NAME": {
 			"description": "Your name",
