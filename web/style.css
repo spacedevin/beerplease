@@ -132,6 +132,12 @@ p {
 	width: 500px;
 	margin: 0 auto;
 	text-align: center;
+	opacity:0;
+	transition: all .2 ease;
+}
+
+.loaded .content {
+	opacity: 1;
 }
 
 h1 {

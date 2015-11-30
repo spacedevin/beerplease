@@ -1,5 +1,4 @@
 
-
 var App = {};
 App.setBeers = function(count) {
 	var old;
@@ -49,36 +48,38 @@ App.removeBeers = function(count) {
 angular.module('BeerPlease', [])
 	.config(function($locationProvider){
 	$locationProvider.html5Mode(true);
-}).run(function($rootScope, $location) {
+}).run(function($rootScope, $location, $http) {
 
 	var handler = StripeCheckout.configure({
-		key: 'pk_gdm1KopKOp3F90WmR4wcup8zmArrp',
-		image: 'https://s3.amazonaws.com/stripe-uploads/QnXaUCtPgcpPDVH1t8fvjoiClYarMyLKmerchant-icon-1436117912995-10547031_685890424836814_2055180330_n-128.png',
+		key: config.stripe.publish,
+		image: config.stripe.image,
 		locale: 'auto',
 		token: function(token) {
 			console.log(token);
+			$http.post('/pay', {
+				amt: $rootScope.beers * 5 * 100,
+				token: token.id
+			}).then(function() {
+				// just asume all is well
+			}, function() {
+				alert('Failed!');
+			});
 		}
 	});
 
-	$rootScope.pay = function(e) {
+	$rootScope.pay = function() {
 		handler.open({
-			name: 'Devin Smith',
-			description: '2 widgets',
+			name: config.general.name,
+			description: config.general.title,
 			amount: $rootScope.beers * 5 * 100,
-			bitcoin: true
+			bitcoin: config.stripe.bitcoin ? true : false
 		});
-		e.preventDefault();
 	};
-
-	// Close Checkout on page navigation
-	$(window).on('popstate', function() {
-		handler.close();
-	});
 
 	$rootScope.beers = 1;
 
 	$rootScope.$watch('beers', function() {
-		if (parseInt($rootScope.beers) != $rootScope.beers || $rootScope.beers < 1 || $rootScope.beers.replace(/[^0-9]/,'') != $rootScope.beers) {
+		if (parseInt($rootScope.beers) != $rootScope.beers || $rootScope.beers < 1 || ($rootScope.beers.replace && $rootScope.beers.replace(/[^0-9]/,'') != $rootScope.beers)) {
 			$rootScope.beers = 1;
 		}
 		if ($rootScope.beers > 99) {
@@ -86,4 +87,6 @@ angular.module('BeerPlease', [])
 		}
 		App.setBeers($rootScope.beers);
 	});
+
+	$('body').addClass('loaded');
 });
