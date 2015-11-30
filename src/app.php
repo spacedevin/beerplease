@@ -6,23 +6,23 @@ $beer = new Tipsy\Tipsy;
 $beer->config('../src/*.ini');
 
 if ($_ENV['GENERAL_TITLE']) {
-	$this->tipsy()->config([general => [title => $_ENV['GENERAL_TITLE']]]);
+	$beer->config([general => [title => $_ENV['GENERAL_TITLE']]]);
 }
 
 if ($_ENV['GENERAL_NAME']) {
-	$this->tipsy()->config([general => [name => $_ENV['GENERAL_NAME']]]);
+	$beer->config([general => [name => $_ENV['GENERAL_NAME']]]);
 }
 
 if ($_ENV['STRIPE_IMAGE']) {
-	$this->tipsy()->config([stripe => [image => $_ENV['STRIPE_IMAGE']]]);
+	$beer->config([stripe => [image => $_ENV['STRIPE_IMAGE']]]);
 }
 
 if ($_ENV['STRIPE_PUBLISH']) {
-	$this->tipsy()->config([stripe => [publish => $_ENV['STRIPE_PUBLISH']]]);
+	$beer->config([stripe => [publish => $_ENV['STRIPE_PUBLISH']]]);
 }
 
 if ($_ENV['STRIPE_BITCOIN']) {
-	$this->tipsy()->config([stripe => [bitcoin => $_ENV['STRIPE_BITCOIN']]]);
+	$beer->config([stripe => [bitcoin => $_ENV['STRIPE_BITCOIN']]]);
 }
 
 $beer->router()
