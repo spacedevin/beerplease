@@ -21,13 +21,17 @@ if ($_ENV['STRIPE_PUBLISH']) {
 	$beer->config([stripe => [publish => $_ENV['STRIPE_PUBLISH']]]);
 }
 
+if ($_ENV['STRIPE_SECRET']) {
+	$beer->config([stripe => [secret => $_ENV['STRIPE_SECRET']]]);
+}
+
 if ($_ENV['STRIPE_BITCOIN']) {
 	$beer->config([stripe => [bitcoin => $_ENV['STRIPE_BITCOIN']]]);
 }
 
 $beer->router()
 	->when('/pay', function($Request) {
-		\Stripe\Stripe::setApiKey('JJW3NRMJam6X7z5MWRbdJOHSq5HwJy4N');
+		\Stripe\Stripe::setApiKey($this->tipsy()->config['stripe']['secret']);
 		$charge = \Stripe\Charge::create([
 			'source' => $Request->token,
 			'amount' => $Request->amt,
@@ -38,6 +42,9 @@ $beer->router()
 		} else {
 			http_response_code(500);
 		}
+	})
+	->when('/favicon.ico', function() {
+		http_response_code(404);
 	})
 	->home(function($View, $Scope) {
 		$Scope->config = $this->tipsy()->config();

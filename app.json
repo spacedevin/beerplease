@@ -33,7 +33,7 @@
 		"STRIPE_BITCOIN": {
 			"description": "Whether or not to accept bitcoin or not",
 			"required": false,
-			"value": ""
+			"value": "yes"
 		}
 	}
 }
