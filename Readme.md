@@ -1,6 +1,6 @@
 ## Beer Please
 
-Beer Please allows beer payments using stripe.
+Beer Please allows beer payments using [Stripe](https://stripe.com/).
 
 
 #### Requirements and Install
