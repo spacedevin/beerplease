@@ -43,6 +43,9 @@ $beer->router()
 			http_response_code(500);
 		}
 	})
+	->when('/info', function() {
+		phpinfo();
+	})
 	->when('/favicon.ico', function() {
 		http_response_code(404);
 	})
