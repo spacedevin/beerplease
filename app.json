@@ -1,15 +1,40 @@
 {
-	"name": "Beer Squirrel",
-	"description": "An Image and text sharing tool",
-	"website": "http://beersquirrel.xyz",
-	"repository": "https://github.com/arzynik/beersquirrel",
-	"keywords": ["tipsy", "image", "sharing", "text", "mysql", "postgresql"],
-	"addons": ["heroku-postgresql"],
+	"name": "Beer Please!",
+	"description": "Beer payments using stripe",
+	"website": "http://beerplease.co",
+	"repository": "https://github.com/arzynik/beerplease",
+	"keywords": ["tipsy", "beer", "please", "stripe", "payments"],
 	"env": {
-		"ENV": "heroku"
+		"GENERAL_TITLE": {
+			"description": "The title at the top of your page",
+			"required": false,
+			"value": "Beer Please!"
+		},
+		"GENERAL_NAME": {
+			"description": "Your name",
+			"required": false,
+			"value": "Someone"
+		},
+		"STRIPE_SECRET": {
+			"description": "Your stripe secret key for charging cards",
+			"required": true,
+			"value": ""
+		},
+		"STRIPE_PUBLISH": {
+			"description": "Your stripe publishable key",
+			"required": true,
+			"value": ""
+		},
+		"STRIPE_IMAGE": {
+			"description": "An absolute path to your stripe icon",
+			"required": false,
+			"value": "http://tipsy.la/images/cocktail.png"
+		},
+		"STRIPE_BITCOIN": {
+			"description": "Whether or not to accept bitcoin or not",
+			"required": false,
+			"value": ""
+		}
 	},
-	"logo": "http://beersquirrel.xyz/icon.svg",
-	"scripts": {
-		"postdeploy": "php install/install.php"
-	}
+	"logo": ""
 }

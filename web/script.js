@@ -27,9 +27,9 @@ App.addBeer = function(count) {
 
 	newBeer
 		.animate({
-		'margin-top': (count * 15) + 'px',
-		'margin-left': (count * 15) + 'px',
-		'opacity': 1 - (count * .08),
+		'margin-top': ((count-1) * 15) + 'px',
+		'margin-left': ((count-1) * 15) + 'px',
+		'opacity': 1 - ((count-1) * .08),
 	}, {
 		duration: 2000,
 		easing: 'easeOutElastic'
