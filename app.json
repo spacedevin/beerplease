@@ -4,7 +4,7 @@
 	"website": "http://beerplease.co",
 	"repository": "https://github.com/arzynik/beerplease",
 	"keywords": ["tipsy", "beer", "please", "stripe", "payments"],
-	"logo": "https://github.com/arzynik/beerplease/blob/master/web/icon.png",
+	"logo": "https://raw.githubusercontent.com/arzynik/beerplease/master/web/icon.png",
 	"env": {
 		"GENERAL_TITLE": {
 			"description": "The title at the top of your page",
