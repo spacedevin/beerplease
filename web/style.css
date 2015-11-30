@@ -24,7 +24,7 @@ input[type=range]::-webkit-slider-thumb {
 	width: 20px;
 	cursor: pointer;
 	border: 0;
-	background: url(/beer.svg) center center no-repeat;
+	background: url(/item.svg) center center no-repeat;
 	background-size: contain;
 	margin-top: -14px;
 }
@@ -35,7 +35,7 @@ input[type=range]::-moz-range-thumb {
 	width: 20px;
 	cursor: pointer;
 	border: 0;
-	background: url(/beer.svg) center center no-repeat;
+	background: url(/item.svg) center center no-repeat;
 	background-size: contain;
 }
 
@@ -44,7 +44,7 @@ input[type=range]::-ms-thumb {
 	width: 20px;
 	cursor: pointer;
 	border: 0;
-	background: url(/beer.svg) center center no-repeat;
+	background: url(/item.svg) center center no-repeat;
 	background-size: contain;
 }
 
@@ -191,7 +191,7 @@ button:hover {
 .beer {
 	height: 300px;
 	width: 267px;
-	background: url(/beer.svg) top center no-repeat;
+	background: url(/item.svg) top center no-repeat;
 	position: absolute;
 	background-size: contain;
 }
