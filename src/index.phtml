@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="BeerPlease">
 	<head>
-		<title><?=$title?></title>
+		<title><?=$config['general']['title']?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 
 		<base href="/">
@@ -19,10 +19,10 @@
 	</head>
 	<body>
 		<div class="content">
-			<h1><?=$title?></h1>
+			<h1><?=$config['general']['title']?></h1>
 
 			<div class="tagline">
-				<h2>Send <?=$name?></h2>
+				<h2>Send <?=$config['general']['name']?></h2>
 				<div class="beer-counter"><input type="text" class="beer-input" value="1" ng-model="beers"></div>
 				<h2>beer{{beers > 1 ? 's' : ''}}*</h2>
 			</div>
