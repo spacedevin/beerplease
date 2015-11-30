@@ -7,7 +7,7 @@ $beer->config('../src/*.ini');
 
 $beer->router()
 	->when('/pay', function($Request) {
-		\Stripe\Stripe::setApiKey($this->tipsy()->config['stripe']['secret']);
+		\Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET'] ? $_ENV['STRIPE_SECRET'] : $this->tipsy()->config()['stripe']['secret']);
 		$charge = \Stripe\Charge::create([
 			'source' => $Request->token,
 			'amount' => $Request->amt,
@@ -42,10 +42,6 @@ $beer->router()
 
 		if ($_ENV['STRIPE_PUBLISH']) {
 			$config['stripe']['publish'] = $_ENV['STRIPE_PUBLISH'];
-		}
-
-		if ($_ENV['STRIPE_SECRET']) {
-			$config['stripe']['secret'] = $_ENV['STRIPE_SECRET'];
 		}
 
 		if ($_ENV['STRIPE_BITCOIN']) {
