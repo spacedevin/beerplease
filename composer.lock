@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/arzynik/tipsy.git",
-                "reference": "e43ec8c8e42b6a2f2ed68539669e0813c5ced8af"
+                "reference": "66e744a17a1f93360a1172abfdcfc7e14a9c1159"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/arzynik/tipsy/zipball/e43ec8c8e42b6a2f2ed68539669e0813c5ced8af",
-                "reference": "e43ec8c8e42b6a2f2ed68539669e0813c5ced8af",
+                "url": "https://api.github.com/repos/arzynik/tipsy/zipball/66e744a17a1f93360a1172abfdcfc7e14a9c1159",
+                "reference": "66e744a17a1f93360a1172abfdcfc7e14a9c1159",
                 "shasum": ""
             },
             "require": {
@@ -29,9 +29,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Tipsy": "src/"
-                }
+                "psr-4": {
+                    "Tipsy\\": "src/"
+                },
+                "files": [
+                    "src/Tipsy.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -52,7 +55,7 @@
                 "mvw",
                 "php"
             ],
-            "time": "2015-11-29 01:36:40"
+            "time": "2015-12-08 18:40:18"
         },
         {
             "name": "stripe/stripe-php",
