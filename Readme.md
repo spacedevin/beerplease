@@ -16,4 +16,4 @@ Beer Please allows beer payments using [Stripe](https://stripe.com/).
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-See [Tipsy Documentation](https://github.com/arzynik/tipsy/wiki) for more information.
+See [Tipsy Documentation](https://github.com/tipsyphp/tipsy/wiki) for more information.
